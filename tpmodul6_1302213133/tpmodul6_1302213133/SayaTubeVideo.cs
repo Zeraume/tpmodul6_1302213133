@@ -15,16 +15,16 @@ namespace tpmodul6_1302213133
 
         public SayaTubeVideo(string title)
         {
-            Debug.Assert(title.Length <= 100 && title != null, "judul video memiliki panjang maksimal 100 karakter dan tidak null.");
+            Debug.Assert(title.Length <= 100 && title != null, "judul video memiliki panjang maksimal 100 karakter dan tidak berupa null.");
             this.title = title;
             var random = new Random();
-            this.id = random.Next(0, 5);
+            this.id = random.Next(10000, 99999);
             this.playCount = 0;
         }
 
         public void IncreasePlayCount(int playCount)
         {
-            Debug.Assert(playCount <= 50, "Input penambahan play count maksimal 50 pada setiap panggilan method-nya.");
+            Debug.Assert(playCount <= 10000000, "Input penambahan play count maksimal 10.000.000 per panggilan method-nya.");
             try
             {
                 this.playCount = checked(this.playCount + playCount);
